@@ -1,4 +1,6 @@
 # Exercise 1: working with data frames (review)
+install.packages("dplyr")
+library("dplyr")
 
 # Install devtools package: allows installations from GitHub
 install.packages("devtools")
@@ -42,7 +44,7 @@ library(fueleconomy)
 # Of the above vehicles, what is the vehicle ID of the vehicle with the worst 
 # hwy mpg?
 # Hint: filter for the worst vehicle, then select its ID.
-
+worst_mpg <- select(filter(two_wheel_twenty_miles, hwy == min(hwy)), id)
 
 # Write a function that takes a `year_choice` and a `make_choice` as parameters, 
 # and returns the vehicle model that gets the most hwy miles/gallon of vehicles 
